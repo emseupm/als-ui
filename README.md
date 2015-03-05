@@ -14,7 +14,7 @@ Dependencies
 Run
 ---
 
-1. Follow steps 1 through 5 from https://github.com/emseupm/api#run
+1. Follow steps 1 through 5 from https://github.com/emseupm/als-api#run
 
 2. Install `ruby` dependencies
 
