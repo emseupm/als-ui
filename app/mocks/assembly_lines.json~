@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "name": "Ford Focus",
+    "stations": [
+      { "id": 1, "name": "Engine Assembly", "estimated_time": 400},
+      {"id": 2, "name": "Door Assembly", "estimated_time": 200}	
+                ]
+  },
+
+  {"id": 2,
+    "name": "Opel Astra",
+    "stations": [
+      { "id": 1, "name": "Engine Assembly1", "estimated_time": 400},
+      {"id": 2, "name": "Door Assembly2", "estimated_time": 400}	
+                ]
+  }
+  
+]

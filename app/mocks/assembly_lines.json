@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "name": "Ford Focus",
+    "stations": [
+      { "id": 1, "name": "Engine Assembly", "estimated_time": 400},
+      {"id": 2, "name": "Door Assembly", "estimated_time": 200}	
+                ]
+  },
+
+  {"id": 2,
+    "name": "LG Washing Machine",
+    "stations": [
+      { "id": 1, "name": "Case Assembly", "estimated_time": 800},
+      {"id": 2, "name": "Door Assembly", "estimated_time": 400}	
+                ]
+  }
+  
+]
