@@ -9,11 +9,14 @@
 
 
 <ul class="list-group">
-  <li ng-repeat="line in assemblyLines" class="list-group-item">
+  <li ng-repeat="line in assemblyLines" class="list-group-item"><a ng-href="#/showAssemblyLine/{{line.id}}">
     {{line.name}}
     <span class=" pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  </a>
   </li>
 </ul>
 <div class="btn-group">
-  <button type="button" class="btn btn-primary">New</button>
+  <a ng-href="#/newAls">
+    <button type="button" class="btn btn-primary">New</button>
+  </a>
 </div>

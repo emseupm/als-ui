@@ -9,5 +9,20 @@
  */
 angular.module('uiApp')
   .controller('ListALSController', ['$scope', 'AssemblyFactory', function ($scope, AssemblyFactory) {
-    $scope.assemblyLines = AssemblyFactory.get();
+    $scope.assemblyLines = [];
+
+    var init = function () {
+      $scope.updateALSList();
+      console.log('Controller created');
+
+    };
+
+
+    $scope.updateALSList = function () {
+      $scope.assemblyLines = AssemblyFactory.query();
+    };
+
+
+    init();
+
   }]);

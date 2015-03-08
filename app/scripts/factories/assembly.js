@@ -1,9 +1,5 @@
 'use strict';
 angular.module('uiApp').factory('AssemblyFactory', function ($resource) {
-  return $resource('mocks/assembly_lines/:id.json', null ,
-    {
-      get: {method: 'GET', isArray: true}
-    }
-  );
+  return $resource('mocks/assembly_lines/:id.json');
 
 });
