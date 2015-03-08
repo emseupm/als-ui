@@ -33,7 +33,7 @@ angular
       })
       .when('/newAls', {
         templateUrl: 'views/newAls.html',
-        controller: 'createAlsController'
+        controller: 'CreateAlsController'
       })
       .otherwise({
         redirectTo: '/'
