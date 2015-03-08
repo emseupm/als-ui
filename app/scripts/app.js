@@ -27,6 +27,14 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/showAssemblyLine/:id',{
+        templateUrl: 'views/showAssemblyLine.html',
+        controller: 'ShowAssemblyLineController'
+      })
+      .when('/newAls', {
+        templateUrl: 'views/newAls.html',
+        controller: 'createAlsController'
+      })
       .otherwise({
         redirectTo: '/'
       });

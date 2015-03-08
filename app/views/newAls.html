@@ -1,0 +1,18 @@
+<div class="container-fluid panel panel-success">
+
+    <form name='newAlsForm' role="form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control" type="text" id="name" placeholder="Enter the name of the Assembly Line" ng-model="newAls.name">
+      </div>
+
+      <div class="als-stations container-fluid panel panel-primary" >
+        <als-stations stations="newAls.stations"></als-stations>
+      </div>
+
+      <button class="btn btn-default" ng-click="createAls()">
+        Create Assembly Line
+      </button>
+    </form>
+
+</div>

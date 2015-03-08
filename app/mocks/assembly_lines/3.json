@@ -1,0 +1,13 @@
+{
+    "id": 3,
+    "name": "Peugeot 204",
+    "stations": [
+      {"id": 1, "name": "Engine Assembly", "estimated_time": 400},
+      {"id": 2, "name": "Door Assembly", "estimated_time": 200},
+      {"id": 3, "name": "Windshield Assembly", "estimated_time": 400},
+      {"id": 4, "name": "Wheels Assembly", "estimated_time": 200},
+      {"id": 5, "name": "Headlights Assembly", "estimated_time": 400},
+      {"id": 6, "name": "Paint", "estimated_time": 200}			
+
+                ]
+  }
