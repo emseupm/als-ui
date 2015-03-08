@@ -27,6 +27,10 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/showAssemblyLine/:id',{
+        templateUrl: 'views/showAssemblyLine.html',
+        controller: 'ShowAssemblyLineController'
+      })
       .otherwise({
         redirectTo: '/'
       });
