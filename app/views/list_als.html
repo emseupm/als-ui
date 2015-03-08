@@ -1,0 +1,19 @@
+<div class="lead">
+  <p>Welcome to ALS, Assembly Line Simulator 9000. Here you can create a simulation
+    of a new assembly line, add stations and planned execution time, and manually simulate the assembly line
+    process.</p>
+</div>
+<h2>
+  Assembly lines
+</h2>
+
+
+<ul class="list-group">
+  <li ng-repeat="line in assemblyLines" class="list-group-item">
+    {{line.name}}
+    <span class=" pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  </li>
+</ul>
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">New</button>
+</div>
