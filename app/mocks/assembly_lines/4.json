@@ -1,0 +1,8 @@
+{
+    "id": 4,
+    "name": "LG TV",
+    "stations": [
+      { "id": 1, "name": "Case Assembly", "estimated_time": 400},
+      {"id": 2, "name": "Screen Assembly", "estimated_time": 200}	
+                ]
+  }
