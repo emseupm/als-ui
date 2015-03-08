@@ -1,19 +1,16 @@
 /**
  * Created by hmontero on 7/03/15.
  */
+'use strict';
 angular.module('uiApp')
-  .controller('createAlsController', ['$scope', 'AssemblyFactory', function ($scope, AssemblyFactory) {
-    var numAls = 1;
+  .controller('CreateAlsController', ['$scope', 'AssemblyFactory', function ($scope, AssemblyFactory) {
     $scope.newAls = {
-      id: '',
       name: '',
       stations: []
     };
     $scope.createAls = function(){
-      $scope.newAls.id = numAls;
-      numAls++;
       console.log($scope.newAls);
-      //AssemblyFactory.save($scope.newAls);
+      AssemblyFactory.save($scope.newAls);
     };
   }
   ]);
