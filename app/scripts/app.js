@@ -31,6 +31,10 @@ angular
         templateUrl: 'views/showAssemblyLine.html',
         controller: 'ShowAssemblyLineController'
       })
+      .when('/newAls', {
+        templateUrl: 'views/newAls.html',
+        controller: 'createAlsController'
+      })
       .otherwise({
         redirectTo: '/'
       });
