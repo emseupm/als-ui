@@ -23,7 +23,7 @@ describe('Controller: ShowAssemblyLineController', function () {
     scope = $rootScope.$new();
     httpBackend = $httpBackend;
     httpBackend.expect(
-      'GET', 'mocks/assembly_lines/1.json'
+      'GET', 'http://localhost:3000/v1/assembly_lines/1.json'
     ).respond(200,
       mockObject
     );

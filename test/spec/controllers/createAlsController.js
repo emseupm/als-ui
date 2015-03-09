@@ -25,7 +25,7 @@ describe('Controller: createAlsController', function () {
 
   it('should get a successful creation response', function () {
     httpBackend.expect(
-      'POST', 'mocks/assembly_lines.json', {'name': 'Station', 'stations':[{name: 'Station', 'estimated_time': 'Time'}] }
+      'POST', 'http://localhost:3000/v1/assembly_lines.json', {'name': 'Station', 'stations':[{name: 'Station', 'estimated_time': 'Time'}] }
     ).respond(201,
       {'id': 1, 'name': 'Station', 'stations':[{'id':1, 'name': 'Station', 'estimated_time': 'Time'}] }
     );
