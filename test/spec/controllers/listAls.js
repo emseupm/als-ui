@@ -34,7 +34,7 @@ describe('Controller: ListALSController', function () {
     scope = $rootScope.$new();
     httpBackend = $httpBackend;
     httpBackend.expect(
-      'GET', 'mocks/assembly_lines.json'
+      'GET', 'http://localhost:3000/v1/assembly_lines.json'
     ).respond(200,
       mockArray
     );

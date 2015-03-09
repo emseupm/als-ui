@@ -3,4 +3,9 @@ node_js:
   - '0.10'
 before_script:
   - 'npm install -g bower grunt-cli'
+  - 'gem install compass'
   - 'bower install'
+cache:
+  directories:
+    - node_modules
+    - bower_components
