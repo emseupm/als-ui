@@ -1,18 +1,29 @@
-<div class="container-fluid panel panel-success">
+<div  class="container-fluid">
+  <div id="success-anchor" class="anchor">
+    <div id="success-message" class="alert alert-success" role="alert" ng-show="isSaved">
+      <strong>Well done!</strong> You successfully created the assembly line <strong>{{newAls.name}}</strong>. You will now be <strong>redirected</strong> to the list of ALS.
+    </div>
+  </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form name='newAlsForm' role="form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input class="form-control" type="text" id="name" placeholder="Enter the name of the Assembly Line" ng-model="newAls.name">
+          </div>
 
-    <form name='newAlsForm' role="form">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input class="form-control" type="text" id="name" placeholder="Enter the name of the Assembly Line" ng-model="newAls.name">
+          <div class="als-stations container-fluid" >
+            <div class="panel panel-primary">
+              <div class="panel-body">
+                <als-stations stations="newAls.stations"></als-stations>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-success" ng-click="createAls()">
+            Create Assembly Line
+          </button>
+        </form>
       </div>
-
-      <div class="als-stations container-fluid panel panel-primary" >
-        <als-stations stations="newAls.stations"></als-stations>
-      </div>
-
-      <button class="btn btn-default" ng-click="createAls()">
-        Create Assembly Line
-      </button>
-    </form>
-
+    </div>
 </div>
