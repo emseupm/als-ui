@@ -1,15 +1,20 @@
-<div class="panel panel-info input-group" ng-repeat="station in stations" style="width: 100%;">
+<div class="panel panel-info" ng-repeat="station in stations">
+  <div class="panel-heading">
+    <h3>Station {{$index+1}}</h3>
+  </div>
   <div class="panel-body">
-    <h3>Station {{station.id}}</h3>
-    <label for="als-name">ALS Name</label>
-    <p id="als-name">{{station.name}}</p>
-    <label for="als-time">Working time</label>
-    <p id="als-time">{{station.estimated_time}}</p>
+    <div class="form-group">
+      <div class="nav nav-justified">
+        <label for="als-name">ALS Name:</label>
+        <p id="als-name">{{station.name}}</p>
+        <label for="als-time">Working time:</label>
+        <p id="als-time">{{station.estimated_time}}</p>
+      </div>
+    </div>
   </div>
 </div>
 
 <form name='stationsForm' role="form">
-
   <div class="form-group">
     <label for="name">Name of Station</label>
     <input class="form-control" type="text" id="name" placeholder="Enter the name of the Station" ng-model="name" value="name">
@@ -21,7 +26,7 @@
   </div>
 
   <div class="form-group">
-    <button class="btn btn-default pull-right" ng-click="addStation()">
+    <button class="btn btn-info pull-right" ng-click="addStation()">
       Add Station
     </button>
   </div>

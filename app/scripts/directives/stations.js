@@ -16,7 +16,6 @@ angular.module('uiApp').directive('alsStations', function(){
           $scope.stations.push({'name': $scope.name, 'estimated_time': $scope.time});
           $scope.name = '';
           $scope.time = '';
-          console.log($scope.stations);
       };
     }
   };
