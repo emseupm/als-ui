@@ -1,0 +1,15 @@
+{
+"elapsed_time": 100,
+"station_results": [{
+"name": "Door Assembly",
+"elapsed_time": 200,
+"delay_time": 5
+},
+{
+"name": "Wheel Assembly",
+"elapsed_time": 234,
+"delay_time": 45
+}]
+}
+
+
