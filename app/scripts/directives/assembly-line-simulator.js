@@ -54,19 +54,21 @@ angular.module('uiApp').directive('assemblyLineSimulator', function() {
       var stopCurrentStation = function () {
         var timer = stationTimer($scope.stationNumber);
         timer.stop();
-        $scope.stationResults.push({ 'elapsed_time': timerMillis(timer), 'delay_time' : 0 });
+        var station = $scope.assemblyLineInfo.stations[$scope.stationNumber];
+        $scope.stationResults[$scope.stationNumber] = { 'station_id': station.id, 'elapsed_time': timerMillis(timer), 'delay_time' : 0 };
       };
       //Changes from one station to the next one
       $scope.nextStation = function() {
         stopCurrentStation();
         $scope.stationNumber++;
-      }
+      };
       //Connects with the API and register all the simulation data.
       var registerSimulationData = function () {
         $scope.simulation.assemblyLineId = $scope.assemblyLineId;
-        SimulationFactory.save($scope.simulation, function () {
+        SimulationFactory.save($scope.simulation, function (data) {
           //Show result button
           $scope.simulationRegistered = true;
+          $scope.simulation = data;
         });
       };
     }
