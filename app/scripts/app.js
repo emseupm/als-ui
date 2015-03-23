@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'timer'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -30,6 +31,10 @@ angular
       .when('/showAssemblyLine/:id',{
         templateUrl: 'views/showAssemblyLine.html',
         controller: 'ShowAssemblyLineController'
+      })
+      .when('/assemblyLines/:id/simulate',{
+        templateUrl: 'views/simulateAssemblyLine.html',
+        controller: 'SimulateAssemblyLineController'
       })
       .when('/newAls', {
         templateUrl: 'views/newAls.html',
