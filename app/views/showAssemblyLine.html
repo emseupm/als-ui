@@ -1,15 +1,17 @@
 <p>
-<b>We are in the assembly line called {{assemblyLineInfo.name}}</p>
+  <b>We are in the assembly line called {{assemblyLineInfo.name}}
 </p>
 <div class="bottom-buffer"></div>
-<div class="row" >
-	<div class="col-md-3" ng-repeat="station in assemblyLineInfo.stations">
-		<div id="square"></div>
-		<div align="center">{{station.name}}</div>
-		<div class="top-buffer"></div>
-	</div> <!--col md 3 -->
+<div class="row">
+  <div class="col-md-3" ng-repeat="station in assemblyLineInfo.stations">
+    <div id="square"></div>
+    <div align="center">{{station.name}}</div>
+    <div class="top-buffer"></div>
+  </div>
+  <!--col md 3 -->
 
-	<div class="col-md-12 text-center">
-		<a ng-href="#/assemblyLines/{{assemblyLineId}}/simulate" class="btn btn-primary">Simulate</a>
-	</div>
+  <div class="col-md-12 text-center">
+    <a ng-href="#/assemblyLines/{{assemblyLineId}}/simulate" class="btn btn-primary">Simulate</a>
+  </div>
 </div> <!--div class row -->
+<simulation-inventory></simulation-inventory>
