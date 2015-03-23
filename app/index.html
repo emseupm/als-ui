@@ -49,15 +49,23 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/momentjs/moment.js"></script>
+<script src="bower_components/humanize-duration/humanize-duration.js"></script>
+<script src="bower_components/angular-timer/dist/angular-timer.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
-<!--Controllers-->
-<script src="scripts/controllers/createAlsController.js"></script>
+<script src="scripts/factories/assembly.js"></script>
+<script src="scripts/factories/simulation.js"></script>
 <script src="scripts/controllers/listAlsController.js"></script>
 <script src="scripts/controllers/showAssemblyLineController.js"></script>
+<!--Controllers-->
+<script src="scripts/controllers/createAlsController.js"></script>
+<script src="scripts/controllers/simulationResultsController.js"></script>
+<script src="scripts/controllers/simulateAssemblyLineController.js"></script>
+
 <!--Services-->
 <script src="scripts/factories/assembly.js"></script>
 <script src="scripts/factories/inventory.js"></script>
@@ -65,6 +73,8 @@
 <!--Directives-->
 <script src="scripts/directives/stations.js"></script>
 <script src="scripts/directives/simulationInventory.js"></script>
+<script src="scripts/directives/station-timer.js"></script>
+<script src="scripts/directives/assembly-line-simulator.js"></script>
 <!-- endbuild -->
 </body>
 </html>
