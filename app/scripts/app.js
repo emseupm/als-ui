@@ -40,7 +40,7 @@ angular
         templateUrl: 'views/newAls.html',
         controller: 'CreateAlsController'
       })
-      .when('/assemblyLine/:assemblyLineId/simulationResults',{
+      .when('/assemblyLine/:assemblyLineId/simulationResults/:id',{
         templateUrl: 'views/simulationResults.html',
         controller: 'SimulationResultsController'
       })

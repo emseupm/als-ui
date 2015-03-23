@@ -6,8 +6,9 @@
 angular.module('uiApp').controller('SimulationResultsController',function($scope, $log, $routeParams, SimulationFactory, AssemblyFactory){
 
   $scope.assemblyLineId = $routeParams.assemblyLineId;
+  $scope.simulationId = $routeParams.id;
 
-  $scope.simulationResults = SimulationFactory.get({assemblyLineId:$scope.assemblyLineId});
+  $scope.simulationResults = SimulationFactory.get({ id: $scope.simulationId, assemblyLineId:$scope.assemblyLineId });
 
   $scope.assemblyLineInfo = AssemblyFactory.get({id:$scope.assemblyLineId});
 
