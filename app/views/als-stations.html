@@ -9,6 +9,8 @@
         <p id="als-name">{{station.name}}</p>
         <label for="als-time">Working time:</label>
         <p id="als-time">{{station.estimated_time}}</p>
+        <label for="als-comp">Components</label>
+        <p id="als-comp">{{station.componentName}}</p>
       </div>
     </div>
   </div>
@@ -26,7 +28,21 @@
   </div>
 
   <div class="form-group">
-    <button class="btn btn-info pull-right" ng-click="addStation()">
+    <label for="component">Select Component</label>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" placeholder="select a component for the station" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+          {{componentName}}
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <li ng-repeat="component in components" role="presentation"><a role="menuitem" tabindex="-1" ng-click = "selectComponent(component)">{{component.name}}</a></li>
+        </ul>
+      </div>
+  </div>
+
+
+  <div class="form-group">
+    <button class="btn btn-default pull-right" ng-click="addStation()">
       Add Station
     </button>
   </div>

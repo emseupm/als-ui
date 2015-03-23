@@ -35,6 +35,10 @@ angular
         templateUrl: 'views/newAls.html',
         controller: 'CreateAlsController'
       })
+      .when('/showWarehouse', {
+        templateUrl: 'views/showWarehouse.html',
+        controller:'InventoryController'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -1,0 +1,45 @@
+<div class="container-fluid panel panel-success">
+  <div class="panel-body">
+  <h1>
+    <b>warehouse</p>
+  </h1>
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>stock</th>
+          </tr>
+        </thead>
+        <tbody ng-repeat="component in components">
+          <tr>
+            <td>{{component.name}}</td>
+            <td>{{component.stock}}</td>
+            <td>
+              <button class="btn btn-primary" ng-click="increaseComponent(component.id)">+</button>
+              <button class="btn btn-primary" ng-click="decreaseComponent(component.id)">-</button>
+              <button class="btn btn-danger" ng-click="deleteComponent(component.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="container-fluid panel panel-primary">
+    <form name = 'newInvFrom' role = "form">
+      <div class = "form-group">
+        <label for="name">Name of new Inventory</label>
+        <input ng-model="newComponent.name" class="form-control" type="text" id="name" placeholder="Enter the name of the Inventory">
+      </div>
+      <div class = "form-group">
+        <label for="number">Number of new Inventory</label>
+        <input ng-model="newComponent.stock" class="form-control" type="number" id="stock">
+      </div>
+      <div class="col-md-12 text-center">
+        <div class="btn btn-default" ng-click="addComponent()">Add Inventory</div>
+      </div>
+    </form>
+  </div>
+
+</div>
