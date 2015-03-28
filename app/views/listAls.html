@@ -3,20 +3,47 @@
     of a new assembly line, add stations and planned execution time, and manually simulate the assembly line
     process.</p>
 </div>
+<div class="alert alert-success" ng-show="message">
+  {{message}}
+</div>
 <h2>
   Assembly lines
 </h2>
 
+<div ng-hide="assemblyLines.length > 0" class="well">
+  <h4>You have no assembly lines yet. Create a new to get started!</h4>
+
+</div>
 
 <ul class="list-group">
-  <li ng-repeat="line in assemblyLines" class="list-group-item"><a ng-href="#/showAssemblyLine/{{line.id}}">
-    {{line.name}}
-    <span class=" pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-  </a>
+  <li ng-repeat="line in assemblyLines" class="list-group-item">
+    <div class="row">
+      <div class="col-md-9">
+        <a ng-href="#/showAssemblyLine/{{line.id}}">
+          {{line.name}}
+        </a>
+      </div>
+      <div class="col-md-2">
+
+        <button ng-show="showDeleteButton" type="button" class=" btn btn-danger"
+                ng-click="showDeleteDialog(line, $index)">
+          Delete ALS
+        </button>
+      </div>
+      <div class="col-md-1">
+        <a ng-href="#/showAssemblyLine/{{line.id}}">
+          <span class=" pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
   </li>
 </ul>
 <div class="btn-group">
-  <a ng-href="#/newAls">
-    <button type="button" class="btn btn-primary">New</button>
-  </a>
+  <button type="button" class="btn btn-primary" ng-click="newALS()">New</button>
+  <button ng-if="assemblyLines.length > 0" type="button" class=" btn btn-danger" ng-click="showDeleteButtons()">Delete
+    ALS
+  </button>
 </div>
+<div ng-include="'views/deleteDialog.html'">
+</div>
+
