@@ -2,7 +2,9 @@
     "id": 1,
     "name": "Ford Focus",
     "stations": [
-      { "id": 1, "name": "Engine Assembly", "estimated_time": 400},
-      {"id": 2, "name": "Door Assembly", "estimated_time": 200}	
+      { "id": 1, "name": "Engine Assembly", "estimated_time": 400, "parts":[1]},
+      {"id": 2, "name": "Door Assembly", "estimated_time": 200, "parts":[2]},
+      { "id": 3, "name": "Windows Assembly", "estimated_time": 400, "parts":[3]},
+      {"id": 4, "name": "Computer Assembly", "estimated_time": 200, "parts":[4]}
                 ]
   }

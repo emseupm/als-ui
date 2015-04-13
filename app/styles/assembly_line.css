@@ -14,3 +14,7 @@ div[id^="square"].current
 
 .top-buffer { margin-top:30px; }
 .bottom-buffer {margin-bottom:30px;}
+
+#done-message{
+  color: green;
+}
