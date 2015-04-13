@@ -18,7 +18,7 @@ angular.module('uiApp').directive('alsStations',['InventoryFactory', function(In
       updateInvList();
       };
       $scope.addStation = function(){
-          $scope.stations.push({'name': $scope.name, 'estimated_time': $scope.time, 'component': $scope.componantSelected});
+          $scope.stations.push({'name': $scope.name, 'estimated_time': $scope.time, 'component': $scope.componentSelected.id});
           $scope.name = '';
           $scope.time = '';
           $scope.componentSelected = null;
