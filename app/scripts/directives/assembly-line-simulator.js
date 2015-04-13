@@ -10,7 +10,9 @@ angular.module('uiApp').directive('assemblyLineSimulator', function() {
       $scope.assemblyLineId = $routeParams.id;
       $scope.assemblyLineInfo = AssemblyFactory.get({ id: $scope.assemblyLineId }, function () {
         $scope.stationCount = $scope.assemblyLineInfo.stations.length;
+        
       });
+
 
       $scope.timerRunning = false;
       $scope.simulationRegistered = false;
@@ -18,6 +20,7 @@ angular.module('uiApp').directive('assemblyLineSimulator', function() {
       $scope.stationCount = 0;
       $scope.stationResults = [];
       $scope.simulation = {};
+      $scope.simulationProgress = 0;
 
       var simulationTimer = $element[0].getElementsByTagName('timer')[0];
       //Start the simulation
@@ -25,6 +28,7 @@ angular.module('uiApp').directive('assemblyLineSimulator', function() {
         simulationTimer.start();
         $scope.timerRunning = true;
         $scope.stationNumber = 0;
+        $scope.simulationProgress = 100 * ($scope.stationNumber + 1) / $scope.stationCount;
       };
       //Ends the simulation
       $scope.stopTimer = function (){
@@ -61,6 +65,7 @@ angular.module('uiApp').directive('assemblyLineSimulator', function() {
       $scope.nextStation = function() {
         stopCurrentStation();
         $scope.stationNumber++;
+        $scope.simulationProgress = 100 * ($scope.stationNumber + 1) / $scope.stationCount;
       };
       //Connects with the API and register all the simulation data.
       var registerSimulationData = function () {

@@ -10,8 +10,22 @@
           <div class="form-group">
             <label for="name">Name</label>
             <input class="form-control" type="text" id="name" placeholder="Enter the name of the Assembly Line" ng-model="newAls.name">
-          </div>
 
+            <label for="dropdownMenu1">Icon</label>
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"> <span ng-hide="newAls.icon">Select Icon</span> <span class="glyphicon glyphicon-{{newAls.icon}}"></span> {{selectedIconName}}
+                <span class="caret"></span>
+              
+              </button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li ng-repeat="icon in icons" ng-click="selectIcon(icon)">
+                  <span class="glyphicon glyphicon-{{icon.glypName}}"></span>{{icon.name}}
+                </li>
+
+              </ul>   
+            </div>
+
+          </div>
           <div class="als-stations container-fluid" >
             <div class="panel panel-primary">
               <div class="panel-body">
