@@ -7,8 +7,29 @@ angular.module('uiApp')
     $scope.isSaved = false;
     $scope.newAls = {
       name: '',
+      icon: '',
       stations: []
     };
+
+    $scope.icons = [
+    {
+      glypName: 'star',
+      name: 'Star'
+    },
+    {
+      glypName: 'home',
+      name: 'House'
+    },
+    {
+      glypName: 'phone',
+      name: 'Mobile'
+    }];
+
+    $scope.selectIcon = function(icon){
+      $scope.newAls.icon = icon.glypName;
+      $scope.selectedIconName = icon.name;
+
+    }
     $scope.createAls = function(){
 
       AssemblyFactory.save($scope.newAls, function () {
@@ -22,5 +43,7 @@ angular.module('uiApp')
         $timeout(function(){$location.path('/');}, 4000);
       });
     };
+
+
   }
   ]);

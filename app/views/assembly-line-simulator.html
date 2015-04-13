@@ -24,3 +24,13 @@
 </div>
 
 <a class="btn btn-primary" ng-show="simulationRegistered" ng-href="#/assemblyLine/{{assemblyLineId}}/simulationResults/{{simulation.id}}">Show simulation results</a>
+
+
+<div style="position: relative; width: 200px; height: 200px;">
+  <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
+    <span class="glyphicon glyphicon-{{assemblyLineInfo.icon}}" style="color: black; font-size: 180px; top: 10px;"></span>
+  </div>
+  <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; -webkit-clip-path: inset({{100 - simulationProgress - 1}}% 0 0 0);">
+    <span class="glyphicon glyphicon-{{assemblyLineInfo.icon}}" style="color: green; font-size: 180px; top: 10px;"></span>
+  </div>
+</div>
