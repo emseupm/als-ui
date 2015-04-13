@@ -1,0 +1,28 @@
+<h2><small>Simulation Results for the </small> {{assemblyLineInfo.name}} Assembly Line</h2>
+
+<table class="table table-striped top-buffer">
+  <thead>
+    <tr>
+     <th>Station</th>
+     <th>Elapsed Time</th>
+     <th>Delay Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="simResult in simulationResults.station_results">
+      <td>{{simResult.name}}</td>
+      <td>{{simResult.elapsed_time}}</td>
+      <td>{{simResult.delay_time}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="position: relative; width: 200px; height: 200px;">
+  <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
+    <span class="glyphicon glyphicon-{{assemblyLineInfo.icon}}" style="color: black; font-size: 180px; top: 10px;"></span>
+  </div>
+  <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; -webkit-clip-path: inset({{100 - simulationProgress - 1}}% 0 0 0);">
+    <span class="glyphicon glyphicon-{{assemblyLineInfo.icon}}" style="color: green; font-size: 180px; top: 10px;"></span>
+  </div>
+</div>

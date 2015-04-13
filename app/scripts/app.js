@@ -15,21 +15,26 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'timer'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: '../views/listAls.html',
+        templateUrl: 'views/listAls.html',
         controller: 'ListALSController'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/showAssemblyLine/:id',{
+      })/*
+     .when('/about', {
+     templateUrl: 'views/about.html',
+     controller: 'AboutCtrl'
+     })*/
+      .when('/showAssemblyLine/:id', {
         templateUrl: 'views/showAssemblyLine.html',
         controller: 'ShowAssemblyLineController'
+      })
+      .when('/assemblyLines/:id/simulate', {
+        templateUrl: 'views/simulateAssemblyLine.html',
+        controller: 'SimulateAssemblyLineController'
       })
       .when('/newAls', {
         templateUrl: 'views/newAls.html',
@@ -37,9 +42,12 @@ angular
       })
       .when('/showWarehouse', {
         templateUrl: 'views/showWarehouse.html',
-        controller:'InventoryController'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+        controller: 'InventoryController'
+          .when('/assemblyLine/:assemblyLineId/simulationResults/:id', {
+            templateUrl: 'views/simulationResults.html',
+            controller: 'SimulationResultsController'
+          })
+          .otherwise({
+            redirectTo: '/'
+          });
   });

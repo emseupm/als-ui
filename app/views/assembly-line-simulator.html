@@ -1,0 +1,36 @@
+<p>
+  <b>We are in the assembly line called {{assemblyLineInfo.name}}</p>
+</p>
+
+<div class="bottom-buffer"></div>
+<div class="row" >
+  <div class="col-md-3" ng-repeat="station in assemblyLineInfo.stations">
+    <div ng-class="{ current: ($index == stationNumber) }" id="square{{$index}}"></div>
+    <div align="center">{{station.name}}</div>
+    <div class="top-buffer" ng-if="$index <= stationNumber">
+      <timer id="station-timer-{{$index}}" interval="1000">{{minutes}} minutes, {{seconds}} seconds.</timer>
+    </div>
+  </div> <!--col md 3 -->
+</div> <!--div class row -->
+
+<button class="btn btn-success" ng-click="startTimer()" ng-disabled="timerRunning">Start Simulation</button>
+<button class="btn btn-primary glyphicon glyphicon-step-forward" ng-show="stationNumber < stationCount - 1 && timerRunning" ng-click="nextStation()"></button>
+<button class="btn btn-danger pull-right" ng-click="stopTimer()" ng-disabled="!timerRunning">Finish Simulation</button>
+
+<div class="counter-container">
+  <h3>
+    <timer ng-model="simulationTimer" auto-start="false" interval="1000" ng-show="stationNumber >= 0">{{minutes}} minutes, {{seconds}} seconds.</timer>
+  </h3>
+</div>
+
+<a class="btn btn-primary" ng-show="simulationRegistered" ng-href="#/assemblyLine/{{assemblyLineId}}/simulationResults/{{simulation.id}}">Show simulation results</a>
+
+
+<div style="position: relative; width: 200px; height: 200px;">
+  <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
+    <span class="glyphicon glyphicon-{{assemblyLineInfo.icon}}" style="color: black; font-size: 180px; top: 10px;"></span>
+  </div>
+  <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; -webkit-clip-path: inset({{100 - simulationProgress - 1}}% 0 0 0);">
+    <span class="glyphicon glyphicon-{{assemblyLineInfo.icon}}" style="color: green; font-size: 180px; top: 10px;"></span>
+  </div>
+</div>
