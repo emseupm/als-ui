@@ -23,11 +23,7 @@ angular
       .when('/', {
         templateUrl: 'views/listAls.html',
         controller: 'ListALSController'
-      })/*
-     .when('/about', {
-     templateUrl: 'views/about.html',
-     controller: 'AboutCtrl'
-     })*/
+      })
       .when('/showAssemblyLine/:id', {
         templateUrl: 'views/showAssemblyLine.html',
         controller: 'ShowAssemblyLineController'
@@ -43,11 +39,13 @@ angular
       .when('/showWarehouse', {
         templateUrl: 'views/showWarehouse.html',
         controller: 'InventoryController'
-          .when('/assemblyLine/:assemblyLineId/simulationResults/:id', {
-            templateUrl: 'views/simulationResults.html',
-            controller: 'SimulationResultsController'
-          })
-          .otherwise({
-            redirectTo: '/'
-          });
+      })
+      .when('/assemblyLine/:assemblyLineId/simulationResults/:id', {
+        templateUrl: 'views/simulationResults.html',
+        controller: 'SimulationResultsController'
+      })
+      .otherwise({
+        redirectTo: '/'
+      })
+
   });
